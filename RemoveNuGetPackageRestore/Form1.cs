@@ -35,8 +35,6 @@ namespace RemoveNuGetPackageRestore
 
             var fld = new OpenFileDialog()
                 {
-                    // "Text files (*.txt)|*.txt|All files (*.*)|*.*"
-
                     Filter = "Visual Studio Solution files (*.sln)|*.sln",
                     AutoUpgradeEnabled = true,
                     InitialDirectory = initialDirectory
@@ -82,26 +80,6 @@ namespace RemoveNuGetPackageRestore
         private void PopFail()
         {
             MessageBox.Show("Something went wrong. Some references for NuGet Package Restore may not have been removed.");
-        }
-    }
-
-    public interface IGetFilePath
-    {
-        string GetPath(string filePath);
-    }
-
-    class GetFilePath : IGetFilePath
-    {
-        public string GetPath(string filePath)
-        {
-            try
-            {
-                return Path.GetFullPath(filePath);
-            }
-            catch
-            {
-                return string.Empty;
-            }
         }
     }
 }
