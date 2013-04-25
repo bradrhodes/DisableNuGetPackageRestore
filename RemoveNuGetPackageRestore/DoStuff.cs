@@ -64,14 +64,14 @@ namespace RemoveNuGetPackageRestore
 
     class CleanProjectFiles : ICleanProjectFiles
     {
-        private readonly IXmlHelper _xmlHelper;
+        private readonly ITextFileHelper _textFileHelper;
         private readonly IProjectFileListGetter _projectFileListGetter;
 
-        public CleanProjectFiles(IXmlHelper xmlHelper, IProjectFileListGetter projectFileListGetter)
+        public CleanProjectFiles(ITextFileHelper textFileHelper, IProjectFileListGetter projectFileListGetter)
         {
-            if (xmlHelper == null) throw new ArgumentNullException("xmlHelper");
+            if (textFileHelper == null) throw new ArgumentNullException("textFileHelper");
             if (projectFileListGetter == null) throw new ArgumentNullException("projectFileListGetter");
-            _xmlHelper = xmlHelper;
+            _textFileHelper = textFileHelper;
             _projectFileListGetter = projectFileListGetter;
         }
 
@@ -83,13 +83,10 @@ namespace RemoveNuGetPackageRestore
 
             foreach (var filePath in fileList)
             {
-                allClean &= _xmlHelper.LoadXmlFile(filePath)
-                          .RemoveNode(@"//Import[@Project='$(SolutionDir)\.nuget\nuget.targets']")
-                          .SaveFile();
-
-                allClean &= _xmlHelper.LoadXmlFile(filePath)
-                        .RemoveNode("//RestorePackages")
-                        .SaveFile();
+                allClean &=
+                    _textFileHelper.LoadFile(filePath)
+                                   .RemoveMatch(Constants.RegularExpressions.ProjEnablePackageRestore)
+                                   .RemoveMatch(Constants.RegularExpressions.ProjSlnFolder).Save();
             }
 
             return allClean;

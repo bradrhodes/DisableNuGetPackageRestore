@@ -25,7 +25,7 @@ namespace RemoveNuGetPackageRestore
                         new CleanSolutionFile(
                             new TextFileHelper()),
                         new CleanProjectFiles(
-                            new XmlHelper(), 
+                            new TextFileHelper(), 
                             new ProjectFileListGetter())))
                 );
         }
