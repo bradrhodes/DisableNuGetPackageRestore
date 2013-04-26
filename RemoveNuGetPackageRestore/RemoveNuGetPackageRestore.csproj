@@ -44,16 +44,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CleanProjectFiles.cs" />
+    <Compile Include="CleanSolutionFile.cs" />
     <Compile Include="Constants.cs" />
-    <Compile Include="DoStuff.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GetFilePath.cs" />
+    <Compile Include="GetSolutionFolder.cs" />
+    <Compile Include="ICleanProjectFiles.cs" />
+    <Compile Include="ICleanSolutionFile.cs" />
+    <Compile Include="IGetFilePath.cs" />
+    <Compile Include="IGetSolutionFolder.cs" />
+    <Compile Include="IProjectFileListGetter.cs" />
+    <Compile Include="IRemoveNuGetFolder.cs" />
+    <Compile Include="IRemoveNuGetPackageRestore.cs" />
+    <Compile Include="ITextFileHelper.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ProjectFileListGetter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemoveNuGetFolder.cs" />
+    <Compile Include="RemoveNuGetPackageRestore.cs" />
+    <Compile Include="TextFileHelper.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
