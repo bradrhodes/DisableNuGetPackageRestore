@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RemoveNuGetPackageRestore.Code;
+using RemoveNuGetPackageRestore.Container;
 
 namespace RemoveNuGetPackageRestore
 {
@@ -15,20 +16,11 @@ namespace RemoveNuGetPackageRestore
         [STAThread]
         static void Main()
         {
+            var container = new DefaultContainer();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(
-                new Form1(
-                    new GetFilePath(), 
-                    new Code.RemoveNuGetPackageRestore(
-                        new RemoveNuGetFolder(), 
-                        new GetSolutionFolder(), 
-                        new CleanSolutionFile(
-                            new TextFileHelper()),
-                        new CleanProjectFiles(
-                            new TextFileHelper(), 
-                            new ProjectFileListGetter())))
-                );
+            Application.Run(new Form1(container));
         }
     }
 }

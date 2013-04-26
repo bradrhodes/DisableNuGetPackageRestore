@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using RemoveNuGetPackageRestore.Code;
+using RemoveNuGetPackageRestore.Container;
 
 namespace RemoveNuGetPackageRestore
 {
@@ -17,12 +11,10 @@ namespace RemoveNuGetPackageRestore
         private readonly IGetFilePath _filePathGetter;
         private readonly IRemoveNuGetPackageRestore _packageRestoreRemover;
 
-        public Form1(IGetFilePath filePathGetter, IRemoveNuGetPackageRestore packageRestoreRemover) : this()
+        public Form1(IIOCContainer container) : this()
         {
-            if (filePathGetter == null) throw new ArgumentNullException("filePathGetter");
-            if (packageRestoreRemover == null) throw new ArgumentNullException("packageRestoreRemover");
-            _filePathGetter = filePathGetter;
-            _packageRestoreRemover = packageRestoreRemover;
+            _filePathGetter = container.Resolve<IGetFilePath>();
+            _packageRestoreRemover = container.Resolve<IRemoveNuGetPackageRestore>();
         }
 
         private Form1()

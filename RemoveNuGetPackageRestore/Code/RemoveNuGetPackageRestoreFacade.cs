@@ -2,14 +2,14 @@
 
 namespace RemoveNuGetPackageRestore.Code
 {
-    public class RemoveNuGetPackageRestore : IRemoveNuGetPackageRestore
+    public class RemoveNuGetPackageRestoreFacade : IRemoveNuGetPackageRestore
     {
         private readonly IRemoveNuGetFolder _folderRemover;
         private readonly IGetSolutionFolder _solutionFolderGetter;
         private readonly ICleanSolutionFile _solutionFileCleaner;
         private readonly ICleanProjectFiles _projectFileCleaner;
 
-        public RemoveNuGetPackageRestore(IRemoveNuGetFolder folderRemover, IGetSolutionFolder solutionFolderGetter, 
+        public RemoveNuGetPackageRestoreFacade(IRemoveNuGetFolder folderRemover, IGetSolutionFolder solutionFolderGetter, 
                                          ICleanSolutionFile solutionFileCleaner, ICleanProjectFiles projectFileCleaner)
         {
             if (folderRemover == null) throw new ArgumentNullException("folderRemover");
