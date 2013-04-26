@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
-using System.Xml;
 
-namespace RemoveNuGetPackageRestore
+namespace RemoveNuGetPackageRestore.Code
 {
     class RemoveNuGetFolder : IRemoveNuGetFolder
     {

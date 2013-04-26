@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace RemoveNuGetPackageRestore
+namespace RemoveNuGetPackageRestore.Code
 {
     class TextFileHelper : ITextFileHelper
     {

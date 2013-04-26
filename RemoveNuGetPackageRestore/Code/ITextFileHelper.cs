@@ -1,4 +1,4 @@
-﻿namespace RemoveNuGetPackageRestore
+﻿namespace RemoveNuGetPackageRestore.Code
 {
     /// <summary>
     /// Just wrap up some of the text file methods

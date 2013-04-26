@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace RemoveNuGetPackageRestore
+namespace RemoveNuGetPackageRestore.Code
 {
     class GetFilePath : IGetFilePath
     {

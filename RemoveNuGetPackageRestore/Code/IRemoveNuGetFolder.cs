@@ -1,4 +1,4 @@
-﻿namespace RemoveNuGetPackageRestore
+﻿namespace RemoveNuGetPackageRestore.Code
 {
     /// <summary>
     /// Removes the .nuget folder

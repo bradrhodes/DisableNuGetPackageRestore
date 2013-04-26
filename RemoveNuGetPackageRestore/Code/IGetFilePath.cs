@@ -1,4 +1,4 @@
-﻿namespace RemoveNuGetPackageRestore
+﻿namespace RemoveNuGetPackageRestore.Code
 {
     /// <summary>
     /// Gets the path of a file

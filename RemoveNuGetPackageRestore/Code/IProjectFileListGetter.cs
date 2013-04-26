@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace RemoveNuGetPackageRestore
+namespace RemoveNuGetPackageRestore.Code
 {
     /// <summary>
     /// Gets the list of all the project files

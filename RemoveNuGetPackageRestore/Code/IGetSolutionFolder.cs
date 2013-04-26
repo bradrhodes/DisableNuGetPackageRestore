@@ -1,4 +1,4 @@
-﻿namespace RemoveNuGetPackageRestore
+﻿namespace RemoveNuGetPackageRestore.Code
 {
     /// <summary>
     /// Gets the folder of the solution file

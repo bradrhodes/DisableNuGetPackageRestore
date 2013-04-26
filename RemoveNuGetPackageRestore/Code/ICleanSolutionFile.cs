@@ -1,4 +1,4 @@
-﻿namespace RemoveNuGetPackageRestore
+﻿namespace RemoveNuGetPackageRestore.Code
 {
     /// <summary>
     /// Cleans NuGet Package Restore references from solution files

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RemoveNuGetPackageRestore.Code;
 
 namespace RemoveNuGetPackageRestore
 {
@@ -19,7 +20,7 @@ namespace RemoveNuGetPackageRestore
             Application.Run(
                 new Form1(
                     new GetFilePath(), 
-                    new RemoveNuGetPackageRestore(
+                    new Code.RemoveNuGetPackageRestore(
                         new RemoveNuGetFolder(), 
                         new GetSolutionFolder(), 
                         new CleanSolutionFile(

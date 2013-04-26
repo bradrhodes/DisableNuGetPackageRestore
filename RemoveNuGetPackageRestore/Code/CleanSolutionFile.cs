@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RemoveNuGetPackageRestore
+namespace RemoveNuGetPackageRestore.Code
 {
     class CleanSolutionFile : ICleanSolutionFile
     {
