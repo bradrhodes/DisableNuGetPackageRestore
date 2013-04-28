@@ -1,4 +1,5 @@
 ﻿using System;
+using Ninject.Planning.Bindings;
 using RemoveNuGetPackageRestore.Code;
 
 namespace RemoveNuGetPackageRestore.Container

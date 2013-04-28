@@ -16,7 +16,7 @@ namespace RemoveNuGetPackageRestore
         [STAThread]
         static void Main()
         {
-            var container = new DefaultContainer();
+            var container = new NinjectContainer();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
