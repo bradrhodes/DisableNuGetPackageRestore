@@ -6,7 +6,8 @@
         {
             public const string SlnFolder = @"Project\([^\r\n]*?\) = "".nuget"".*?EndProject[\W]";
             public const string ProjEnablePackageRestore = @"\s+<RestorePackages>true</RestorePackages>";
-            public const string ProjSlnFolder = @"\s+<Import Project=""\$\(SolutionDir\)\\.nuget\\nuget\.targets"" />";
+            public const string ProjSlnFolder = @"\s+<Import Project=""\$\(SolutionDir\)\\.nuget\\nuget\.targets"" (Condition=""Exists\('\$\(SolutionDir\)\\.nuget\\nuget\.targets'\)"")?\s*/>";
+            public const string ProjBuildImportError = @"\s+<Error Condition=""!Exists\('\$\(SolutionDir\)\\.nuget\\NuGet.targets'\)"" Text=""\$\(\[System.String\]::Format\('\$\(ErrorText\)', '\$\(SolutionDir\)\\.nuget\\NuGet.targets'\)\)"" />";
         }
 
         public static class FolderNames

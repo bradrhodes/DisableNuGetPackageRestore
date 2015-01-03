@@ -44,9 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Code\CleanProjectFiles.cs" />
-    <Compile Include="Code\CleanSolutionFile.cs" />
     <Compile Include="Code\Constants.cs" />
+    <Compile Include="Code\Impl\CleanProjectFiles.cs" />
+    <Compile Include="Code\Impl\CleanSolutionFile.cs" />
+    <Compile Include="Code\Impl\GetFilePath.cs" />
+    <Compile Include="Code\Impl\GetSolutionFolder.cs" />
+    <Compile Include="Code\Impl\ProjectFileListGetter.cs" />
     <Compile Include="Container\DefaultContainer.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -54,8 +57,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Code\GetFilePath.cs" />
-    <Compile Include="Code\GetSolutionFolder.cs" />
     <Compile Include="Code\ICleanProjectFiles.cs" />
     <Compile Include="Code\ICleanSolutionFile.cs" />
     <Compile Include="Code\IGetFilePath.cs" />
@@ -66,11 +67,10 @@
     <Compile Include="Code\ITextFileHelper.cs" />
     <Compile Include="Container\IIOCContainer.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Code\ProjectFileListGetter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Code\RemoveNuGetFolder.cs" />
-    <Compile Include="Code\RemoveNuGetPackageRestoreFacade.cs" />
-    <Compile Include="Code\TextFileHelper.cs" />
+    <Compile Include="Code\Impl\RemoveNuGetFolder.cs" />
+    <Compile Include="Code\Impl\RemoveNuGetPackageRestoreFacade.cs" />
+    <Compile Include="Code\Impl\TextFileHelper.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

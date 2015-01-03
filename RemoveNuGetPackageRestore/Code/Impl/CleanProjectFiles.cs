@@ -26,7 +26,8 @@ namespace RemoveNuGetPackageRestore.Code
                 allClean &=
                     _textFileHelper.LoadFile(filePath)
                                    .RemoveMatch(Constants.RegularExpressions.ProjEnablePackageRestore)
-                                   .RemoveMatch(Constants.RegularExpressions.ProjSlnFolder).Save();
+                                   .RemoveMatch(Constants.RegularExpressions.ProjSlnFolder)
+                                   .RemoveMatch(Constants.RegularExpressions.ProjBuildImportError).Save();
             }
 
             return allClean;
