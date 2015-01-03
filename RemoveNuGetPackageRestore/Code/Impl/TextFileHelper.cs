@@ -26,7 +26,7 @@ namespace RemoveNuGetPackageRestore.Code
             if(String.IsNullOrEmpty(_fileContents))
                 throw new ArgumentException("Text file must be loaded and parsed first.");
 
-            var regex = new Regex(pattern, RegexOptions.Singleline);
+            var regex = new Regex(pattern, RegexOptions.Singleline|RegexOptions.IgnoreCase);
 
             var result = regex.Replace(_fileContents, "");
 
